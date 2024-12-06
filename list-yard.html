@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Your Yard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="app.js"></script>
+</head>
+
+<body>
+    <header class="main-header">
+        <h1>List Your Yard</h1>
+        <nav>
+            <ul class="nav-tabs">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="list-yard.html">List Your Yard</a></li>
+                <li><a href="browse-yards.html">Browse Yards</a></li>
+            </ul>
+        </nav>
+
+        <div class="auth-buttons">
+            <button id="login-btn" onclick="openModal('login')">Log In</button>
+            <button id="signup-btn" onclick="openModal('signup')">Create Account</button>
+            <button id="logout-btn" style="display:none;" onclick="logout()">Log Out</button> <!-- Log Out button -->
+        </div>
+    </header>
+
+    <main>
+        <section class="description-placeholder">
+            <h2>List Your Yard</h2>
+            <p>To list your yard, follow these steps:</p>
+            <ol>
+                <li>Create an account or log in using the buttons below.</li>
+                <li>After logging in, you’ll be able to create a listing.</li>
+                <li>Fill out the form with details about your yard, including the address, date of event, parking availability, quantity of spots, price, and type of listing.</li>
+                <li>Click the “List Yard” button to submit your listing.</li>
+                <li>Once your listing is submitted, it will be available for others to browse.</li>
+                <li>Needs more here about how to edit or delete listing when added</li>
+            </ol>
+        </section>
+
+        <!-- Yard listing form -->
+        <form id="yard-form" style="display: none;">
+            <label for="yard-address">Address:</label>
+            <input type="text" id="yard-address" placeholder="Enter address" required>
+        
+            <label for="date-of-event">Date of Event:</label> 
+            <input type="date" id="date-of-event" required>
+        
+            <label for="start-time">Parking Availability: Start Time:</label>
+            <input type="time" id="start-time" required>
+        
+            <label for="end-time">Parking Availability: End Time:</label>
+            <input type="time" id="end-time" required>
+
+            <label for="spots">Quantity of Spots:</label>
+            <input type="number" id="spots" placeholder="Enter number of spots"  min="1" required>
+        
+            <label for="price">Price for Event per Car:</label>
+            <input type="text" id="price" placeholder="Enter price" required>
+        
+            <label for="type-of-listing">Type of Listing:</label>
+            <div id="type-of-listing">
+                <label><input type="radio" name="listing-type" value="Street" required> Street</label>
+                <label><input type="radio" name="listing-type" value="Yard"> Yard</label>
+                <label><input type="radio" name="listing-type" value="Driveway"> Driveway</label>
+                <label><input type="radio" name="listing-type" value="Parking Lot"> Parking Lot</label>
+                <label><input type="radio" name="listing-type" value="Other" id="other-option"> Other</label>
+                <!-- Text box for 'Other' option, hidden by default -->
+                <input type="text" id="other-listing-type" placeholder="Please specify" style="display: none;">
+            </div>
+        
+            <label for="listing-note">Note on Listing:</label>
+            <textarea id="listing-note" placeholder="Add any notes about the listing"></textarea>
+        
+            <button type="submit">List Yard</button>
+
+    </form>
+    </main>
+
+    <footer class="main-footer">
+        <p> By creating an account you agree to the following terms and conditions including releasing Parking Lane from liability</p>
+        <p>Terms and Conditions can be found at https://docs.google.com/document/d/1PUJ5X3voWv0kqxgg4nYWmtAWU-r8w9-bhB-BJpdOO9o/edit?usp=sharing</p>
+        <p>&copy; 2024 VT Parking Lane Service</p>
+    </footer>
+
+    <!-- Authentication Modal -->
+    <div id="auth-modal" class="modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+
+            <!-- Login Form -->
+            <form id="login-form" style="display:none;">
+                <h2>Login</h2>
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+
+            <!-- Sign Up Form -->
+            <form id="signup-form" style="display:none;">
+                <h2>Sign Up</h2>
+                <input type="text" id="first-name" placeholder="First Name" required>
+                <input type="text" id="last-initial" placeholder="Last Initial" required>
+                <input type="text" id="phone" placeholder="Phone Number" required>
+                <input type="email" id="signup-email" placeholder="Email" required>
+                <input type="password" id="signup-password" placeholder="Password" minlength="8" required>
+                <!-- Add this in the signup-form in index.html -->
+                    <h3>Preferred Payment Method</h3>
+                    <h4>Please select one or more payment methods</h4>
+                    <div id="payment-options">
+                        <label><input type="checkbox" id="paypal-checkbox" value="PayPal:"> PayPal</label>
+                        <input type="text" id="paypal-username" placeholder="PayPal Username" style="display:none;">
+                        
+                        <label><input type="checkbox" id="venmo-checkbox" value="Venmo:"> Venmo</label>
+                        <input type="text" id="venmo-username" placeholder="Venmo Username" style="display:none;">
+                        
+                        <label><input type="checkbox" id="zelle-checkbox" value="Zelle:"> Zelle</label>
+                        <input type="text" id="zelle-username" placeholder="Zelle Username" style="display:none;">
+                    </div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

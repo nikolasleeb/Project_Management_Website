@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VT Park Lane</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts Link -->
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&display=swap" rel="stylesheet">
+
+    <!-- Firebase App (the core Firebase SDK, version 8.10.0 for browser support) -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <!-- Firebase Authentication -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <!-- Firebase Firestore -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <!-- Link to app.js where Firebase config is set -->
+    <script src="app.js"></script>
+</head>
+<body>
+
+    <!-- Header with Title and Tabs -->
+    <header class="main-header">
+        <h1>VT Parking Lane</h1>
+        <nav>
+            <ul class="nav-tabs">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="list-yard.html">List Your Yard</a></li>
+                <li><a href="browse-yards.html">Browse Yards</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Middle section with description and image collage -->
+    <main>
+        <section class="landing-description">
+            <h2>Welcome to VT Parking Lane</h2>
+            <p>Welcome to our yard rental platform, where homeowners can list their yards for parking during events in town. 
+                Easily browse available spaces, reserve a spot, and pay directly to the yard owners through Venmo, PayPal, or Zelle. Simplify event day parking and find your space today!</p>
+            <p>To get started with listing your yard, head the to the list yard tab and create an account. </p>
+            <p> Please note: This is the first release version. Upcoming features will include account detail editing, yard posting editing, reservation editing, filters for browsing yards, and the ability to pay in website.</p>
+            <p>If you need assistance or wish to delete your account or yard posting, please reach out to us at vtlaneparking@gmail.com</p>
+        </section>
+
+        <section class="image-collage">
+            <img src="images/image1.jpeg" alt="Lane Game at Night">
+            <img src="images/image2.jpeg" alt="Park Lane Logo">
+            <img src="images/image3.jpeg" alt="Lane Game at Day">
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <p> By creating an account you agree to the following terms and conditions including releasing Parking Lane from liability</p>
+        <p>Terms and Conditions can be found at https://docs.google.com/document/d/1PUJ5X3voWv0kqxgg4nYWmtAWU-r8w9-bhB-BJpdOO9o/edit?usp=sharing</p>
+        <p>&copy; 2024 VT Parking Lane Service</p>
+    </footer>
+
+    <!-- Modal Structure for Login/Sign-Up -->
+    <div id="auth-modal" style="display:none;">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+
+            <!-- Login Form -->
+            <form id="login-form" style="display:none;">
+                <input type="email" id="login-email" placeholder="Email" required>
+                <input type="password" id="login-password" placeholder="Password" required>
+                <button type="submit">Login</button>
+            </form>
+
+            <!-- Sign Up Form -->
+            <form id="signup-form" style="display:none;">
+                <input type="text" id="first-name" placeholder="First Name" required>
+                <input type="text" id="last-initial" placeholder="Last Initial" required>
+                <input type="text" id="phone" placeholder="Phone Number" required>
+                <input type="email" id="signup-email" placeholder="Email" required>
+                <input type="password" id="signup-password" placeholder="Password" minlength="8" required>
+                <h3>Preferred Payment Method</h3>
+                    <h4>Please select one or more payment methods if you plan on listing your yard</h4>
+                    <div id="payment-options">
+                        <label><input type="checkbox" id="paypal-checkbox" value="PayPal:"> PayPal</label>
+                        <input type="text" id="paypal-username" placeholder="PayPal Username" style="display:none;">
+                        
+                        <label><input type="checkbox" id="venmo-checkbox" value="Venmo:"> Venmo</label>
+                        <input type="text" id="venmo-username" placeholder="Venmo Username" style="display:none;">
+                        
+                        <label><input type="checkbox" id="zelle-checkbox" value="Zelle:"> Zelle</label>
+                        <input type="text" id="zelle-username" placeholder="Zelle Username" style="display:none;">
+                    </div>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>

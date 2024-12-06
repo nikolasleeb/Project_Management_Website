@@ -1,0 +1,682 @@
+
+/* ==================== General Page Styling ==================== */
+
+/* Main General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #75787b; /* Hokie Stone */
+    color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* ==================== Header Styling ==================== */
+/* Main Header styling */
+.main-header {
+    background-color: #861F41; /* Chicago Maroon */
+    padding: 20px;
+    text-align: center;
+    color: #E5751F; /* Burnt Orange */
+}
+
+.main-header h1 {
+    font-family: 'Luckiest Guy', system-ui; /* Custom Font */
+    color: #E5751F; /* Burnt Orange */
+    text-shadow: -1px -1px 0 #FFFFFF, 1px -1px 0 #FFFFFF, -1px 1px 0 #FFFFFF, 1px 1px 0 #FFFFFF; /* White outline */
+    font-size: 48px; /* Increase size for title */
+    margin: 0;
+}
+
+/* ==================== Navigation Tabs Styling ==================== */
+/* Navigation Tabs */
+.nav-tabs {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Space between the tabs */
+}
+
+.nav-tabs li a {
+    color: #E5751F; /* Burnt Orange */
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: 2px solid white; /* White border around tabs */
+    border-radius: 5px;
+}
+
+.nav-tabs li a:hover {
+    color: #ffcc66; /* Lighter hover color */
+    border-color: #ffcc66; /* Change border on hover */
+}
+
+/* ==================== Section Box Styling (Orange Borders) ==================== */
+/* Add borders around the different sections */
+section {
+    border: 3px solid #E5751F; /* Burnt Orange border */
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 5px;
+    max-width: 900px; /* Adjusted to ensure uniform width across sections */
+}
+
+/* Styling for specific sections */
+.description-placeholder, .map-section, .filter-section {
+    background-color: #75787b; /* Hokie Stone */
+}
+
+/* ==================== Footer Styling ==================== */
+/* Footer Style */
+.main-footer {
+    background-color: #2D2D2D; /* Dark footer background */
+    padding: 10px;
+    text-align: center;
+    color: white;
+    position: relative; /* Changed from fixed to relative */
+    width: 100%;
+    bottom: 0;
+    margin-top: 20px; /* Add space above the footer */
+}
+
+/* ==================== Modal and Form Styling ==================== */
+/* Modal Overlay */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #861F41; /* Chicago Maroon */
+    margin: 10% auto;
+    padding: 40px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 10px;
+    color: white;
+    position: relative; /* For close button positioning */
+    border: none; /* Remove any unwanted borders */
+}
+
+/* Close Button Styling */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #ffcc66; /* Lighter hover color */
+}
+
+/* Form Title Styling */
+.modal-content h2 {
+    text-align: center;
+    font-family: 'Luckiest Guy', system-ui;
+    color: #ffcc66; /* Lighter orange */
+    text-shadow: -1px -1px 0 #FFFFFF, 1px -1px 0 #FFFFFF, -1px 1px 0 #FFFFFF, 1px 1px 0 #FFFFFF; /* White outline */
+    font-size: 36px; /* Increase size */
+    margin-bottom: 20px;
+}
+
+/* ==================== Input Field Styling ==================== */
+/* Input Box Styling (email, password) */
+.modal-content input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 2px solid white; /* Add border for standout effect */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #861F41; /* Chicago Maroon */
+    color: white;
+    font-size: 16px;
+}
+
+/* Input Field Focus State */
+.modal-content input:focus {
+    outline: none;
+    border-color: #ffcc66; /* Burnt orange focus color */
+}
+
+/* ==================== Form Styling for List Yard ==================== */
+/* Styling for List Yard form */
+form#yard-form {
+    background-color: #75787b; /* Hokie Stone background */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 3px solid #E5751F; /* Burnt Orange border */
+}
+
+
+form#yard-form input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #861F41; /* Chicago Maroon */
+    color: white;
+    font-size: 14px;
+}
+
+form#yard-form label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+    color: black
+}
+
+/* Styling for the date input (Date of Event) */
+/* Adjust the form container to ensure it stays inside the orange border */
+form#yard-form {
+    background-color: #75787b; /* Hokie Stone background */
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px; /* Ensure form doesn't exceed this width */
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 3px solid #E5751F; /* Burnt Orange border */
+}
+
+/* Ensure all input fields, labels, and textarea are properly aligned within the form */
+form#yard-form input[type="text"],
+form#yard-form input[type="number"],
+form#yard-form input[type="date"],
+form#yard-form input[type="time"],
+form#yard-form textarea {
+    width: 100%; /* Full width within the form */
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #861F41; /* Chicago Maroon */
+    color: white;
+    font-size: 14px;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+form#yard-form label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    display: block;
+    color: black;
+}
+
+/* Adjust radio buttons styling */
+#type-of-listing {
+    margin-bottom: 15px;
+}
+
+#type-of-listing label {
+    display: block;
+    margin-bottom: 5px;
+    color: #E5751F; /* Burnt Orange for radio options */
+}
+
+/* Submit button */
+form#yard-form button[type="submit"] {
+    background-color: #E5751F;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%; /* Make button full width */
+}
+
+form#yard-form button[type="submit"]:hover {
+    background-color: #c05a17;
+}
+
+/* Background for yard listings section */
+#yard-listings {
+    background-color: #f0f0f0; /* Light grey to contrast the card and page background */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Styling for yard listings */
+.yard-listing {
+    background-color: #555555; /* Darker grey consistent for all cards */
+}
+
+.yard-listing {
+    margin-bottom: 20px; /* Add space between listings */
+    padding: 15px;
+    border: 2px solid #E5751F; /* Burnt Orange border */
+    border-radius: 8px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increased shadow for better visibility */
+}
+
+.yard-listing h3 {
+    font-size: 20px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.yard-listing p {
+    color: white;
+    margin: 5px 0;
+}
+
+/* ==================== Button Styling ==================== */
+
+/* Submit Button */
+.modal-content button {
+    background-color: #E5751F; /* Burnt Orange */
+    color: white;
+    padding: 10px 20px;
+    border: none; /* Remove borders to clean up */
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin: 20px auto;
+    width: 80%;
+}
+
+.modal-content button:hover {
+    background-color: #ffcc66; /* Lighter hover color */
+}
+
+/* ==================== Auth Button (Log In / Sign Up) ==================== */
+/* Auth Buttons */
+.auth-buttons {
+    position: static; /* Change from absolute to static for mobile */
+    width: 100%; /* Full width */
+    display: flex;
+    flex-direction: column; /* Stack buttons vertically on smaller screens */
+    margin: 0 auto;
+    padding: 10px;
+    text-align: center;
+}
+
+.auth-buttons button {
+    background-color: #E5751F; /* Burnt Orange */
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 10px 0;
+    width: 90%;
+    font-size: 16px;
+}
+
+.auth-buttons button:hover {
+    background-color: #ffcc66;
+    border-color: #ffcc66;
+}
+
+.auth-buttons button:focus {
+    outline: none;
+}
+
+/* Reserve Button Styling */
+.reserve-button {
+    background-color: #E5751F; /* Burnt Orange */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    display: block; /* Ensure it is visible */
+    margin-top: 10px; /* Add some space above the button */
+}
+
+.reserve-button:hover {
+    background-color: #c05a17; /* Darker Burnt Orange on hover */
+}
+
+/* Modal Background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with transparency */
+    overflow: auto; /* Ensure scrolling if needed */
+}
+
+/* Modal Background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Black overlay with transparency */
+    overflow: auto; /* Allow scrolling if content overflows */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #861F41; /* Chicago Maroon */
+    margin: 8% auto;
+    padding: 30px;
+    border: none;
+    width: 50%; /* Adjust modal width */
+    max-width: 600px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+/* Modal Heading */
+.modal-content h3 {
+    color: white;
+    font-size: 26px; /* Slightly larger heading */
+    margin-bottom: 20px; /* Add space below heading */
+}
+
+/* Input Field Styling */
+.modal-content input[type="number"] {
+    width: 100%; /* Full width */
+    padding: 8px;
+    margin: 20px 2px; /* Space between input and other elements */
+    border: 2px solid white;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: white; /* White background */
+    color: black;
+    box-sizing: border-box;
+}
+
+/* Confirm Button Styling */
+.modal-content button {
+    background-color: #E5751F; /* Burnt Orange */
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: auto; /* Space between input and button */
+    width: 80%,auto; /* Match width of input */
+    display: block;
+    box-sizing: border-box;
+}
+
+.modal-content button:hover {
+    background-color: #c05a17; /* Darker Burnt Orange on hover */
+}
+
+/* Close Button */
+.close-btn {
+    color: white;
+    float: right;
+    font-size: 30px; /* Slightly larger close button */
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #ddd;
+}
+
+/* Adjusting the width of the filter container */
+#filters {
+    display: block;
+    width: 85%; /* Adjust this to match the exact width of the orange boxes */
+    margin: 0 auto; /* Center the filter container */
+    padding: 20px;
+    background-color: #861F41; /* Maroon background */
+    border-radius: 10px;
+    margin-bottom: 20px;
+    color: white;
+    font-family: 'Luckiest Guy', sans-serif;
+}
+
+/* Center the filters title */
+#filters h2 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+/* Grid layout for filter groups */
+.filter-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Two equal columns */
+    grid-gap: 20px;
+    width: 100%; /* Keep the filter group within the container */
+    margin-bottom: 15px;
+}
+
+/* Adjust distance filter to be centered */
+.filter-item.full-width {
+    grid-column: span 2; /* Make this item span both columns */
+    display: flex;
+    justify-content: center;
+}
+
+/* Styling individual filter items */
+.filter-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Label adjustments */
+.filter-item label {
+    font-weight: bold;
+    margin-right: 10px;
+    color: white;
+}
+
+/* Input fields */
+.filter-item input,
+.filter-item select {
+    padding: 10px;
+    border: 2px solid #E5751F; /* Burnt Orange border */
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100px;
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+
+/* Styling the "to" separator */
+.range-to {
+    margin: 0 10px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Submit button styling */
+#apply-filters-btn {
+    background-color: #E5751F; /* Burnt Orange background */
+    color: white;
+    padding: 12px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 150px;
+    display: block;
+    margin: 20px auto;
+}
+
+#apply-filters-btn:hover {
+    background-color: #861F41; /* Maroon hover effect */
+    color: white;
+}
+
+.image-collage {
+    display: flex;
+    flex-direction: row; /* Images are arranged horizontally */
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px; /* Adjust the spacing between images */
+    flex-wrap: nowrap; /* Allow wrapping if needed */
+    width: 100%;
+}
+
+.image-collage img {
+    width: 30%;
+    height: auto;
+    max-width: 200px; /* Adjust based on your desired size */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover;
+    border-radius: 10px; /* Optional: add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow */
+}
+
+@media (max-width: 768px) {
+    .image-collage {
+        flex-direction: column; /* Images will stack vertically on mobile */
+        align-items: center; /* Center images vertically */
+        flex-wrap: wrap;
+    }
+
+    .image-collage img {
+        width: 90%; /* Make images take up most of the screen width on mobile */
+        height: auto;
+        max-width: none; /* Remove the max-width limit for smaller screens */
+    }
+}
+
+/* Style the payment method section */
+#payment-options {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    gap: 10px; /* Add some space between each payment option */
+    align-items: flex-start; /* Align checkboxes and labels to the left */
+    margin-bottom: 20px; /* Add space below the payment options */
+}
+
+#payment-options label {
+    display: flex;
+    align-items: center; /* Vertically align the checkbox and label text */
+    gap: 10px; /* Add space between the checkbox and the label text */
+    font-size: 18px; /* Adjust font size */
+    color: white; /* Keep the text color consistent with your design */
+}
+
+/* Ensure the input fields for usernames are aligned with their labels */
+#payment-options input[type="text"] {
+    display: block;
+    margin-top: 5px; /* Add some space between the checkbox and input field */
+    width: 100%; /* Make input fields full width */
+    max-width: 300px; /* Limit the width of input fields */
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    background-color: #861F41; /* Match the background color with the site theme */
+    color: white;
+}
+
+#payment-options input[type="checkbox"] {
+    width: auto;
+    margin-right: 10px; /* Ensure there's space between the checkbox and label */
+}
+
+@media (max-width: 768px) {
+    .nav-tabs {
+        flex-direction: column; /* Stack vertically on smaller screens */
+    }
+    .nav-tabs li {
+        width: 100%; /* Full width for each nav item */
+    }
+}
+
+/* Ensure the main sections are responsive */
+section {
+    max-width: 100%; /* Full width on small screens */
+    margin: 10px; /* Decrease margin on small screens */
+    padding: 10px;
+}
+
+/* For form elements */
+form#yard-form {
+    max-width: 100%; /* Adjust to full width on mobile */
+    margin: 10px auto;
+}
+
+.auth-buttons button, .reserve-button {
+    width: 100%; /* Full width on mobile */
+    padding: 15px; /* Increase padding for easier tap */
+    font-size: 16px; /* Increase font size for readability */
+}
+
+@media (min-width: 768px) {
+    .auth-buttons button, .reserve-button {
+        width: auto; /* Return to normal size on larger screens */
+    }
+}
+
+/* Ensure listings are responsive */
+.yard-listing {
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .yard-listing {
+        font-size: 14px;
+        padding: 5px;
+    }
+}
+
+.image-collage img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+}
+
+@media (max-width: 768px) {
+    .nav-tabs {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 768px) {
+    h1, h2 {
+        font-size: 80%;
+    }
+    .modal-content h2 {
+        font-size: 24px; /* Smaller heading for mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    section {
+        padding: 10px;
+        margin: 10px auto;
+    }
+    form#yard-form {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    button {
+        width: 100%;
+        font-size: 16px; /* Ensure buttons are readable on small screens */
+    }
+}
